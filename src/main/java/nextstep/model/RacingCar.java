@@ -11,6 +11,10 @@ public class RacingCar {
         this.distance = distance;
     }
 
+    public void addDistance(int distance) {
+        this.distance += distance;
+    }
+
     public String getName() {
         return name;
     }

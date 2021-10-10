@@ -5,11 +5,12 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static nextstep.common.Constant.*;
+
 public class ApplicationTest extends NSTest {
     private static final int MOVING_FORWARD = 4;
     private static final int STOP = 3;
 
-    private static final String ERROR_MESSAGE = "[ERROR]";
 
     @BeforeEach
     void beforeEach() {
@@ -28,9 +29,10 @@ public class ApplicationTest extends NSTest {
     void 이름에_대한_예외_처리() {
         assertSimpleTest(() -> {
             runNoLineFound("pobi,javaji");
-            verify(ERROR_MESSAGE);
+            verify(ERROR_MESSAGE_LESS_THAN_5_DIGIT);
         });
     }
+
 
     @AfterEach
     void tearDown() {

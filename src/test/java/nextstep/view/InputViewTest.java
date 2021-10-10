@@ -4,6 +4,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
+import java.util.NoSuchElementException;
+
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
 class InputViewTest {
@@ -38,9 +40,9 @@ class InputViewTest {
     void 자동차_이름_5자_이상_입력_예외처리(String name) {
         InputView inputView = new InputView();
 
-        assertThatExceptionOfType(IllegalArgumentException.class)
+        assertThatExceptionOfType(NoSuchElementException.class)
                 .isThrownBy(() -> {
                     inputView.checkStringLength(name);
-                }).withMessageMatching("5자 이상 입력을 할 수 없습니다.");
+                }).withMessageMatching("자동차 이름을 5자 이상 입력할 수 없습니다.");
     }
 }

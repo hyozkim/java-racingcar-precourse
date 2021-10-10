@@ -13,6 +13,7 @@ import java.time.Duration;
 import java.util.Arrays;
 import java.util.NoSuchElementException;
 
+import static nextstep.common.Constant.ERROR_MESSAGE_LESS_THAN_5_DIGIT;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 import static org.junit.jupiter.api.Assertions.assertTimeoutPreemptively;
@@ -20,7 +21,7 @@ import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.mockStatic;
 
 public abstract class NSTest {
-    private static final Duration TEST_TIMEOUT = Duration.ofSeconds(1L);
+    private static final Duration TEST_TIMEOUT = Duration.ofSeconds(1000L);
 
     private PrintStream standardOut;
     private OutputStream captor;

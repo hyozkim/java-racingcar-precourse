@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 
 import static nextstep.common.Constant.*;
 public class InputView {
+    public InputView() {}
 
     public int inputTurns() {
         systemOutPrint(INPUT_MESSAGE_MOVE_TURN);

@@ -4,23 +4,26 @@ import java.util.StringJoiner;
 
 public class RacingCar {
     private String name;
-    private int distance;
+    private Distance distance;
 
-    public RacingCar(String name, int distance) {
+    public RacingCar(String name, Distance distance) {
         this.name = name;
         this.distance = distance;
     }
 
     public void addDistance(int distance) {
-        this.distance += distance;
+        this.distance.increaseDistance(distance);
     }
 
     public String getName() {
         return name;
     }
 
-    public int getDistance() {
-        return distance;
+    public String getDistance() {
+        return distance.getDistance();
+    }
+    public int getDistanceLength() {
+        return distance.getDistanceLength();
     }
 
     @Override

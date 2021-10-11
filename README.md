@@ -20,3 +20,8 @@
 `Test`
 - [x] Test Case 작성
 
+`Refactor`
+- [x] 일급 컬렉션 적용
+- [x] 원시값과 문자열 포장
+- [x] stream 사용안함 조건 적용
+- [x] Distance class 생성 (총 이동거리를 표현하기 위함)

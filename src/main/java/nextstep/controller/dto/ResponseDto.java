@@ -1,62 +1,47 @@
 package nextstep.controller.dto;
 
-import nextstep.model.RacingCar;
-
-import java.util.List;
+import nextstep.model.RacingCars;
 
 public class ResponseDto {
-    private boolean success;
-    private String message;
-    private List<RacingCar> racingCarList;
+    private String winners;
+    private RacingCars racingCars;
 
-    public ResponseDto(boolean success, String message, List<RacingCar> racingCarList) {
-        this.success = success;
-        this.message = message;
-        this.racingCarList = racingCarList;
+    public ResponseDto(String winners, RacingCars racingCars) {
+        this.winners = winners;
+        this.racingCars = racingCars;
     }
 
-    public boolean isSuccess() {
-        return success;
+    public String getWinners() {
+        return winners;
     }
 
-    public String getMessage() {
-        return message;
-    }
-
-    public List<RacingCar> getRacingCarList() {
-        return racingCarList;
+    public RacingCars getRacingCars() {
+        return racingCars;
     }
 
     static public class Builder {
-        private boolean success;
-        private String message;
-        private List<RacingCar> racingCarList;
+        private String winners;
+        private RacingCars racingCars;
 
         public Builder() {}
 
         public Builder(ResponseDto responseDto) {
-            this.success = responseDto.success;
-            this.message = responseDto.message;
-            this.racingCarList = responseDto.racingCarList;
+            this.winners = responseDto.winners;
+            this.racingCars = responseDto.racingCars;
         }
 
-        public Builder success(boolean success) {
-            this.success = success;
+        public Builder winners(String winners) {
+            this.winners = winners;
             return this;
         }
 
-        public Builder message(String message) {
-            this.message = message;
-            return this;
-        }
-
-        public Builder racingCarList(List<RacingCar> racingCarList) {
-            this.racingCarList = racingCarList;
+        public Builder racingCarList(RacingCars racingCars) {
+            this.racingCars = racingCars;
             return this;
         }
 
         public ResponseDto build() {
-            return new ResponseDto(success, message, racingCarList);
+            return new ResponseDto(winners, racingCars);
         }
     }
 }

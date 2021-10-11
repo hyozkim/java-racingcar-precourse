@@ -1,21 +1,19 @@
 package nextstep.view;
 
+import nextstep.model.Distance;
 import nextstep.model.RacingCar;
 import nextstep.utils.Console;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.stream.Collectors;
 
 import static nextstep.common.Constant.*;
 public class InputView {
     public InputView() {}
 
-    public int inputTurns() {
+    public int createTurns() {
         systemOutPrint(INPUT_MESSAGE_MOVE_TURN);
         String input = Console.readLine();
-
         checkDigit(input);
         return Integer.parseInt(input);
     }
@@ -27,29 +25,13 @@ public class InputView {
         }
     }
 
-    public List<RacingCar> inputCars() {
+    public List<RacingCar> createRacingCars() {
         systemOutPrint(INPUT_MESSAGE_CAR_NAME);
-        String[] cars = Console.readLine().split(",");;
-        checkTotalSize(cars.length);
-        return Arrays.stream(cars)
-                .map(name -> {
-                    checkStringLength(name.trim());
-                    return new RacingCar(name.trim(), 0);
-                })
-                .collect(Collectors.toList());
-    }
-
-    public void checkTotalSize(int length) {
-        if( length < 2 ) {
-            systemOutPrint(ERROR_MESSAGE_MIN_LENGTH_REQUIRED);
-            throw new IllegalArgumentException(ERROR_MESSAGE_MIN_LENGTH_REQUIRED);
+        String[] names = Console.readLine().split(",");
+        List<RacingCar> racingCarList = new ArrayList<>();
+        for( String name : names ) {
+            racingCarList.add(new RacingCar(name.trim(), new Distance()));
         }
-    }
-
-    public void checkStringLength(String name) {
-        if( name != null && name.length() > 5 ) {
-            systemOutPrint(ERROR_MESSAGE_LESS_THAN_5_DIGIT);
-            throw new NoSuchElementException(ERROR_MESSAGE_LESS_THAN_5_DIGIT);
-        }
+        return racingCarList;
     }
 }

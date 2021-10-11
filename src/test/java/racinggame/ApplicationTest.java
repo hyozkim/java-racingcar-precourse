@@ -21,8 +21,16 @@ public class ApplicationTest extends NSTest {
     void 전진_정지() {
         assertRandomTest(() -> {
             run("pobi,woni", "1");
-            verify("pobi : -", "woni : ", "최종 우승자는 pobi 입니다.");
+            verify("pobi : ----", "woni : ---", "최종 우승자는 pobi 입니다.");
         }, MOVING_FORWARD, STOP);
+    }
+
+    @Test
+    void 우승자_여려명() {
+        assertRandomTest(() -> {
+            run("pobi,woni", "1");
+            verify("pobi : ---", "woni : ---", "최종 우승자는 pobi,woni 입니다.");
+        }, STOP, STOP);
     }
 
     @Test

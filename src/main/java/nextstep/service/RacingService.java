@@ -26,10 +26,10 @@ public class RacingService {
     }
 
     public void addDistance(RacingCar car) {
-        int dist = Randoms.pickNumberInRange(MIN_START_NUMBER,MAX_START_NUMBER);
+        int dist;
         do {
-            car.addDistance(dist);
             dist = Randoms.pickNumberInRange(MIN_START_NUMBER,MAX_START_NUMBER);
+            car.addDistance(dist);
         } while( dist >= MIN_CONTINUE_VALUE );
     }
 

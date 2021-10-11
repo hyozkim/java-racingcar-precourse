@@ -31,7 +31,7 @@ public class OutputView {
     }
 
     private StringBuilder buildResultString(StringBuilder sb, String name, boolean isWinner) {
-        sb.append(name).append(" : ").append(isWinner ? "-" : "");
+        sb.append(name).append(" : ").append(isWinner ? "-" : "").append("\n");
         return sb;
     }
 

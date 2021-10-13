@@ -9,23 +9,21 @@ import java.util.List;
 
 import static nextstep.common.Constant.*;
 public class InputView {
-    public InputView() {}
-
-    public int createTurns() {
+    public static int createTurns() {
         systemOutPrint(INPUT_MESSAGE_MOVE_TURN);
         String input = Console.readLine();
         checkDigit(input);
         return Integer.parseInt(input);
     }
 
-    public void checkDigit(String turns) {
+    public static void checkDigit(String turns) {
         if( !turns.matches("[+-]?\\d*(\\.\\d+)?") ) {
             systemOutPrint(ERROR_MESSAGE_NUMBER_ONLY);
             throw new IllegalArgumentException(ERROR_MESSAGE_NUMBER_ONLY);
         }
     }
 
-    public List<RacingCar> createRacingCars() {
+    public static List<RacingCar> createRacingCars() {
         systemOutPrint(INPUT_MESSAGE_CAR_NAME);
         String[] names = Console.readLine().split(",");
         List<RacingCar> racingCarList = new ArrayList<>();

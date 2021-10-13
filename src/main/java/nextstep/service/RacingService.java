@@ -20,13 +20,13 @@ public class RacingService {
         }
     }
 
-    public void move(RacingCars racingCars) {
+    private void move(RacingCars racingCars) {
         for (RacingCar car : racingCars.getRacingCarList()) {
             addDistance(car);
         }
     }
 
-    public void addDistance(RacingCar car) {
+    private void addDistance(RacingCar car) {
         int dist;
         do {
             dist = Randoms.pickNumberInRange(MIN_START_NUMBER,MAX_START_NUMBER);

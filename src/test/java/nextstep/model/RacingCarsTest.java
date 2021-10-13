@@ -21,7 +21,7 @@ class RacingCarsTest {
 
         assertThatExceptionOfType(IllegalArgumentException.class)
                 .isThrownBy(() -> {
-                    RacingCars racingCars = new RacingCars(racingCarList);
+                    new RacingCars(racingCarList);
                 }).withMessageMatching("자동차는 2개 이상 입력되어야 합니다.");
     }
 
@@ -35,7 +35,7 @@ class RacingCarsTest {
 
         assertThatExceptionOfType(NoSuchElementException.class)
                 .isThrownBy(() -> {
-                    RacingCars racingCars = new RacingCars(racingCarList);
+                    new RacingCars(racingCarList);
                 }).withMessageMatching("자동차 이름을 5자 이상 입력할 수 없습니다.");
     }
 

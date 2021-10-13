@@ -25,7 +25,7 @@ public class Constant {
 
     // Error Message
     public static final String ERROR_MESSAGE_MIN_LENGTH_REQUIRED = "자동차는 2개 이상 입력되어야 합니다.";
-    public static final String ERROR_MESSAGE_LESS_THAN_5_DIGIT = "자동차 이름을 5자 이상 입력할 수 없습니다.";
+    public static final String ERROR_MESSAGE_MORE_THAN_5_CHAR = "자동차 이름을 5자 이상 입력할 수 없습니다.";
     public static final String ERROR_MESSAGE_NUMBER_ONLY = "숫자만 입력이 가능합니다.";
 
 

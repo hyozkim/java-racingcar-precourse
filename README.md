@@ -25,3 +25,6 @@
 - [x] 원시값과 문자열 포장
 - [x] stream 사용안함 조건 적용
 - [x] Distance class 생성 (총 이동거리를 표현하기 위함)
+- [x] public, private 접근제한자 분리
+- [x] InputView, OutputView static 클래스로 변경
+- [x] 변수명 좀 더 명확히 수정

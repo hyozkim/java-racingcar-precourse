@@ -25,8 +25,8 @@ public class RacingCars {
 
     public void checkNameLength(String name) {
         if( name != null && name.length() > MAX_NAME_LENGTH ) {
-            systemOutPrint(ERROR_MESSAGE_LESS_THAN_5_DIGIT);
-            throw new NoSuchElementException(ERROR_MESSAGE_LESS_THAN_5_DIGIT);
+            systemOutPrint(ERROR_MESSAGE_MORE_THAN_5_CHAR);
+            throw new NoSuchElementException(ERROR_MESSAGE_MORE_THAN_5_CHAR);
         }
     }
 
